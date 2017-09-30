@@ -1,0 +1,777 @@
+/**
+* 2007-2017 PrestaShop
+*
+* NOTICE OF LICENSE
+*
+* This source file is subject to the Academic Free License (AFL 3.0)
+* that is bundled with this package in the file LICENSE.txt.
+* It is also available through the world-wide-web at this URL:
+* http://opensource.org/licenses/afl-3.0.php
+* If you did not receive a copy of the license and are unable to
+* obtain it through the world-wide-web, please send an email
+* to license@prestashop.com so we can send you a copy immediately.
+*
+* DISCLAIMER
+*
+* Do not edit or add to this file if you wish to upgrade PrestaShop to newer
+* versions in the future. If you wish to customize PrestaShop for your
+* needs please refer to http://www.prestashop.com for more information.
+*
+*  @author    PrestaShop SA <contact@prestashop.com>
+*  @copyright 2007-2017 PrestaShop SA
+*  @license   http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+*  International Registered Trademark & Property of PrestaShop SA
+*
+* Don't forget to prefix your containers with your own identifier
+* to avoid any conflicts with others containers.
+*/
+
+div[class=speedbox_wait] {
+    background: transparent url(../img/front/loader.gif) no-repeat center;
+    height: 32px;
+    width: 32px;
+    margin: 10px auto;
+}
+
+.speedbox_relais_selected div[class=speedbox_wait] {
+    margin-top: -25px;
+    margin-right: 65%;
+}
+/* Table */
+#speedbox_relais_point_table
+{
+    padding-bottom:5px;
+    margin-top:0;
+    text-rendering:optimizelegibility;
+}
+
+#tr_carrier_speedbox_relais
+{
+    padding:0;
+}
+
+div.speedbox_relais_error
+{
+    background-color:#a90034;
+    padding-left:10px;
+    padding-bottom:0;
+    font-size:13px;
+    color:#fff;
+    line-height:20px;
+}
+
+table.speedbox_relaistable
+{
+    border-style:none;
+    border-width:0;
+    padding:0;
+    width:100%;
+    background-color:#fff;
+    border-collapse:separate;
+    border-spacing:0 0;
+    padding-bottom:0!important;
+}
+
+table.speedbox_relais_container
+{
+    width:100%;
+}
+
+div.speedbox_relais_error
+{
+    background-color:#fff;
+    color:#dc0032;
+    text-align:center;
+    line-height:24px;
+    border:1px solid #dc0032;
+}
+
+#speedbox_div_relais_header
+{
+    width:100%;
+    height:25px;
+    line-height:24px;
+    padding:0 !important;
+    background-color:#DC0032;
+}
+#speedbox_div_relais_header td {
+    padding: 0;
+}
+#speedbox_div_relais_header p
+{
+    height:25px;
+    padding:0;
+    margin:0;
+    padding-left:15px;
+    font-size:13px;
+    color:#fff;
+    text-align: left !important;
+    line-height: 24px;
+}
+
+#speedbox_div_relais_srch_link {
+    background-color: #e6e7e7;
+    color: #424143;
+    padding: 7px 10px 7px 14px;
+    line-height: 12px;
+    font-size: 13px;
+}
+
+#speedbox_div_relais_srch_panel {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+#speedbox_search_address {
+    line-height: 16px;
+    margin-top: 4px;
+    margin-bottom: 5px;
+    border: 1px solid #808285;
+    height: 26px;
+    width: 249px;
+    padding: 1px 6px;
+    box-sizing: border-box;
+    font-size: 12px;
+    background-color: #fff;
+    color: #424143;
+}
+
+#speedbox_search_zipcode {
+    line-height: 16px;
+    margin-top: 4px;
+    margin-bottom: 5px;
+    margin-right: 6px;
+    border: 1px solid #808285;
+    font-size: 12px;
+    background-color: #fff;
+    color: #424143;
+    padding: 1px 6px;
+    width: 90px;
+    box-sizing: border-box;
+    height: 26px;
+}
+
+#speedbox_search_city {
+    line-height: 16px;
+    margin: 4px 5px 5px 0px;
+    border: 1px solid #808285;
+    font-size: 12px;
+    background-color: #fff;
+    color: #424143;
+    padding: 1px 6px;
+    height: 26px;
+    width: 150px;
+    
+    box-sizing: border-box;
+}
+
+#speedbox_search_submit {
+    border-style: none;
+    border-color: #808285;
+    border-width: 1px;
+    background-color: #dc0032;
+    color: #fff;
+    font-size: 12px;
+    line-height: 18px;
+    height: 25px;
+    padding: 1px 6px;
+}
+
+#speedbox_reset_submit {
+    border-style: solid;
+    border-color: #808285;
+    border-width: 1px;
+    background-color: #fff;
+    color: #808285;
+    font-size: 12px;
+    line-height: 18px;
+    height: 25px;
+    padding: 1px 6px;
+}
+
+tr.speedbox_lignepr
+{
+    height:60px;
+    display:inline-block;
+    padding:0;
+    width:97%;
+    margin-left:10px;
+    border-style:solid;
+    border-color:#808285;
+    border-width:0 0 1px 0;
+}
+
+
+
+td.speedbox_logorelais
+{
+    min-width:40px;
+    width:8%;
+    background:#fff url(../img/front/carrier_speedbox_logo.png) no-repeat center;
+    border-style: none !important;
+    vertical-align: middle !important;
+}
+
+td.speedbox_adressepr
+{
+    background-color:#fff;
+    width:60%;
+    font-size:12px;
+    font-weight:400;
+    color:#424143;
+    height: 59px;
+    padding: 0 !important;
+    padding-left: 5px !important;
+    margin:0;
+    text-align: left !important;
+    vertical-align: middle !important;
+    border-style: none !important;
+}
+
+td.speedbox_adressepr b
+{
+}
+
+td.speedbox_distancepr
+{
+    background-color:#fff;
+    width:12.5%;
+    padding-right:0!important;
+    line-height:14px;
+    font-weight:400;
+    font-size:12px;
+    color:#444;
+    text-align: left !important;
+    vertical-align: middle !important;
+    border-style: none !important;
+}
+
+td.speedbox_popinpr
+{
+    background-color:#fff;
+    line-height:14px;
+    font-weight:300;
+    font-variant:normal;
+    font-size:11px;
+    color:#434142;
+    padding:0 !important;
+    width:17.5%;
+    text-align: right;
+    vertical-align: middle !important;
+    border-style: none !important;
+}
+
+td.speedbox_popinpr span u:hover
+{
+    color:#DC0042;
+}
+
+a.speedbox_notfancy span
+{
+}
+
+a.speedbox_notfancy span:hover
+{
+    color:#DC0042;
+    text-decoration:underline;
+}
+
+td.speedbox_radiopr
+{
+    background-color:#fff;
+    width:10%;
+    padding: 0px 10px !important;
+    text-align: left !important;
+    vertical-align: middle !important;
+    border-style: none !important;
+}
+
+td.speedbox_radiopr label span:hover
+{
+    cursor:pointer;
+}
+
+td.speedbox_relais_radio.radio {
+    border-width: 0;
+}
+
+input[name=speedbox_relay_id]:not(old)
+{
+
+}
+
+/* Bouton */
+input[name=speedbox_relay_id]:not(old) + label
+{
+    display:inline-block;
+    margin-left:0;
+    line-height:1.5em;
+    margin-top:-15px;
+}
+
+input[name=speedbox_relay_id]:not(old) + label > span
+{
+    display:inline-block;
+    width:35px;
+    height:25px;
+    margin:.25em;
+    background:#E6E7E7;
+    vertical-align:bottom;
+}
+
+/* Bouton gris normal */
+input[name=speedbox_relay_id]:not(old):checked + label > span
+{
+    background:#E6E7E7;
+}
+
+/* Texte ICI blanc sur bouton checked*/
+input[name=speedbox_relay_id]:not(old):checked + label > span:before
+{
+    content:'ICI';
+    display:block;
+    width:35px;
+    color:#fff;
+    font-size:14px;
+    line-height:25px;
+    text-align:center;
+}
+
+/* Overlay rouge sur bouton checked */
+input[name=speedbox_relay_id]:not(old):checked + label > span > span
+{
+    display:block;
+    width:35px;
+    height:25px;
+    margin-top:-25px;
+    margin-right:0;
+    background-color:#DC0032;
+}
+
+/* Texte ICI gris sur bouton normal */
+input[name=speedbox_relay_id]:not(old) + label > span:before
+{
+    content:'ICI';
+    display:block;
+    width:35px;
+    color:#424143;
+    font-size:14px;
+    line-height:25px;
+    text-align:center;
+}
+
+/* Masquer le label ICI */
+td.speedbox_radiopr label b
+{
+    display:none;
+}
+
+#speedbox_relais_filter
+{
+    display:none;
+    position:fixed;
+    width:100%;
+    height:100%;
+    background-color:#000;
+    top:0;
+    left:0;
+    padding:14px;
+    text-align:left;
+    z-index:1000;
+    opacity:0.85;
+    filter:alpha(opacity=85);
+/*IE8 et avant */
+}
+
+.speedbox_relaisbox
+{
+    text-rendering:optimizelegibility;
+    display:block;
+    border-radius:6px;
+    position:fixed;
+    width:60%;
+    height:90%;
+    background-color:#FFF;
+    top:5%;
+    left:20%;
+    padding:0;
+    text-align:left;
+    z-index:1110;
+}
+
+.speedbox_relaisboxcarto
+{
+    width:100%;
+    min-height:62%;
+    top:0;
+    left:0;
+    border-radius:6px 6px 0 0;
+}
+
+div.gm-style-cc div
+{
+    display:none;
+}
+
+div.gm-style {
+    border-radius: 6px 6px 0 0;
+}
+
+div.speedbox_relaisboxbottom
+{
+    position:relative;
+    margin:0 auto;
+    width:800px;
+}
+
+.speedboxboxadresseheader
+{
+    width:313px;
+    height:90px;
+    background:#fff url(../img/front/logo-speedbox.png) no-repeat center;
+    font-weight:300;
+    font-size:12px;
+    text-align:center;
+    border-style:none;
+    margin:5px 0 20px 0;
+    line-height: 130px;
+    padding: 0;
+}
+ 
+.speedbox_relaisboxadresse
+{
+    min-height:88px;
+    height:auto;
+    line-height:22px;
+    font-size:11px;
+    width:240px;
+    margin-bottom:0;
+    position:absolute;
+    left:0;
+}
+
+div.speedbox_relaisboxadresse p
+{
+    padding:0;
+    font-style:italic;
+    font-size:11px;
+    line-height:12px;
+    margin:0;
+    margin-top:5px;
+    margin-bottom:5px;
+}
+
+div.speedbox_relaisboxhoraires
+{
+    text-align:left;
+    background:#FFF;
+    height:auto;
+    line-height:22px;
+    font-size:11px;
+    width:250px;
+    left:260px;
+    position:absolute;
+}
+
+.speedbox_relaisboxhorairesheader
+{
+    width:250px;
+    height:48px;
+    background:#fff url(../img/front/horaires.png) no-repeat center;
+    font-weight:300;
+    font-size:12px;
+    text-align:center;
+    border-style:none;
+    margin:5px 0 20px 0;
+    line-height: 130px;
+    padding: 0;
+}
+
+div.speedbox_relaisboxhoraires h5
+{
+    display:inline-block;
+    background:#dc0032;
+    color:#fff;
+    font-size:11px;
+    font-weight:700;
+    min-width:250px;
+    padding:5px;
+    margin-top:10px;
+    margin-bottom:5px;
+    text-align:center;
+}
+
+div.speedbox_relaisboxhoraires p
+{
+    padding:0;
+    padding-top:5px;
+    padding-left:5px;
+    line-height:11px;
+    margin:0!important;
+}
+
+.speedbox_relaisboxinfos
+{
+    text-align:left;
+    background:#FFF;
+    height:auto;
+    line-height:22px;
+    font-size:11px;
+    width:265px;
+    margin-right:10px;
+    position:absolute;
+    left:520px;
+}
+
+.speedbox_relaisboxinfosheader
+{
+    width:260px;
+    height:48px;
+    background:#fff url(../img/front/info.png) no-repeat center;
+    font-weight:300;
+    font-size:12px;
+    text-align:center;
+    border-style:none;
+    margin:5px 0 20px 0;
+    line-height: 130px;
+    padding: 0;
+}
+
+div.speedbox_relaisboxinfos h5
+{
+    display:inline-block;
+    color:#dc0032;
+    font-size:11px;
+    font-weight:400;
+    width:210px;
+    margin:0;
+}
+
+div.speedbox_relaisboxinfos h4
+{
+    display:inline-block;
+    color:#dc0032;
+    font-size:11px;
+    font-weight:700;
+    width:120px;
+}
+
+.speedbox_relaisboxjour
+{
+    display:inline-block;
+    color:#dc0032;
+    font-size:11px;
+    font-weight:400;
+    min-width:75px;
+}
+
+.speedbox_relaisboxclose
+{
+    background:no-repeat;
+    cursor:pointer;
+    display:block;
+    position:fixed;
+    top:5%;
+    left:80.5%;
+    z-index:1111;
+    transition:all .15s;
+}
+
+.speedbox_relaisboxclose img
+{
+    float:right;
+    padding-top:2px;
+    padding-right:2px;
+}
+
+.speedbox_relaisboxclose:hover
+{
+    transform:rotate(90deg);
+}
+
+div.warnmsg
+{
+    background-color:#fff !important;
+    box-sizing:border-box !important;
+    border-style: solid;
+    border-color: #a90034;
+    border-width: 2px;
+    color:#a90034!important;
+    font-size:13px!important;
+    font-weight:bold;
+    margin:15px 0!important;
+    padding:15px 15px 15px 50px !important;
+    position:relative!important;
+    width:100%!important;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+div.warnmsg::before
+{
+    -moz-osx-font-smoothing:grayscale;
+    -webkit-font-smoothing:antialiased;
+    box-sizing:border-box;
+    color:#a90034;
+    content:"!";
+    display:block;
+    font-size:42px;
+    font-style:normal;
+    font-weight:400;
+    height:25px;
+    left:20px;
+    line-height:1;
+    margin:auto;
+    position:absolute;
+    width:25px;
+    top: 39%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+
+
+div.copy
+{
+    min-height:301px;
+    padding-left:45%;
+    padding-right:10px;
+}
+
+div.copy p
+{
+    margin:10px;
+}
+
+div.copy h2
+{
+    padding:0;
+    margin:10px;
+    font-size:16px;
+    text-transform:none;
+    color:#424143;
+    background:transparent;
+    height: auto;
+}
+
+.copy ul li
+{
+    list-style-type:none;
+    padding-bottom: 5px;
+}
+
+.copy ul li:before
+{
+    content:'•';
+    margin-right:8px;
+    color:#dc0042;
+}
+
+a.speedbox_more
+{
+    margin-left:10px;
+    color:#424143;
+}
+
+a.speedbox_more:hover
+{
+    color:#DC0042;
+}
+#speedbox_relais_selected{
+        color: #d51f4f;
+    font-weight: bold;
+}
+/* Responsive design */
+/* Condition horizontale (PC) */
+@media only screen and (max-width: 1350px) {
+    .speedbox_relaisbox
+    {
+        width:80%;
+        left:10%;
+        top:5%;
+    }
+    
+    .speedbox_relaisboxclose
+    {
+        left:91%;
+        top:5%;
+    }
+}
+
+@media only screen and (max-width: 1020px) {
+    .speedbox_relaisboxinfos
+    {
+        display:none;
+    }
+    
+    div.speedbox_relaisboxbottom
+    {
+        width:520px;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    #speedbox_div_relais_header
+    {
+        display:none;
+    }
+    
+    td.speedbox_logorelais
+    {
+        display:none;
+    }
+    
+    td.speedbox_adressepr
+    {
+        padding-left:5px;
+        font-size:10px;
+    }
+    
+    td.speedbox_distancepr
+    {
+        font-size:10px;
+    }
+    
+      
+    div.copy
+    {
+        padding-left:10px;
+        padding-right:10px;
+    }
+}
+
+@media only screen and (max-width: 680px) {
+    td.speedbox_popinpr
+    {
+        display:none;
+    }
+    
+    .speedbox_relaisboxcarto
+    {
+        min-height:40%;
+    }
+    
+    .speedbox_relaisboxadresse
+    {
+        position:relative;
+    }
+    
+    div.speedbox_relaisboxhoraires
+    {
+        left:0;
+    }
+    
+    div.speedbox_relaisboxbottom
+    {
+        width:250px;
+    }
+}
+
+@media only screen and (max-height: 610px) {
+    .speedbox_relaisboxcarto
+    {
+        display:none;
+    }
+}

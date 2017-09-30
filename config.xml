@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+	<name>speedbox</name>
+	<displayName><![CDATA[Speedbox]]></displayName>
+	<version><![CDATA[1.0.0]]></version>
+	<description><![CDATA[Module de livraison en points relais pour Prestashop 1.6]]></description>
+	<author><![CDATA[S3i Business]]></author>
+	<tab><![CDATA[shipping_logistics]]></tab>
+	<is_configurable>1</is_configurable>
+	<need_instance>1</need_instance>
+</module>
