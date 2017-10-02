@@ -666,20 +666,19 @@ class Speedbox extends CarrierModule
             $params['country'] = $this->context->country->iso_code;
 
             $speedbox_points_relais = $this->helper->get_speedbox_points_relais($params);
-
+            $prefix_url             = (Configuration::get('PS_SSL_ENABLED') || Tools::usingSecureMode()) ? 'https://' : 'http://';
             $this->context->smarty->assign(array(
-                'ps_version'                     => (float) _PS_VERSION_,
-                'opc'                            => (int) Configuration::get('PS_ORDER_PROCESS_TYPE'),
-                'ssl'                            => (int) Configuration::get('PS_SSL_ENABLED'),
-                'ssl_everywhere'                 => (int) Configuration::get('PS_SSL_ENABLED_EVERYWHERE'),
-                'speedbox_tpl_path'              => str_replace('\\', '/', _PS_MODULE_DIR_) . 'speedbox/views/templates/front/ps14',
-                'speedbox_points_relais'         => (!isset($speedbox_points_relais['error']) ? $speedbox_points_relais : null),
-                'error'                          => (isset($speedbox_points_relais['error']) ? $this->l($speedbox_points_relais['error']) : null),
-                'speedbox_relais_validation_url' => _MODULE_DIR_ . 'speedbox/validation.php',
-                'speedbox_selectedrelay'         => (isset(Context::getContext()->cookie->speedbox_selected_relais_id) ? Context::getContext()->cookie->speedbox_selected_relais_id : null),
-                'speedbox_relais_status'         => (Tools::getValue('speedboxrelais') ? Tools::getValue('speedboxrelais') : null),
-                'speedbox_relais_carrier_id'     => (int) Configuration::get('SPEEDBOX_RELAIS_CARRIER'),
-                'selectedCity'                   => $params['city'],
+                'ps_version'                 => (float) _PS_VERSION_,
+                'ssl'                        => (int) Configuration::get('PS_SSL_ENABLED'),
+                'ssl_everywhere'             => (int) Configuration::get('PS_SSL_ENABLED_EVERYWHERE'),
+                'base_dir'                   => $prefix_url . Tools::getShopDomain() . __PS_BASE_URI__,
+                'base_dir_ssl'               => $prefix_url . Tools::getShopDomainSsl() . __PS_BASE_URI__,
+                'speedbox_points_relais'     => (!isset($speedbox_points_relais['error']) ? $speedbox_points_relais : null),
+                'error'                      => (isset($speedbox_points_relais['error']) ? $this->l($speedbox_points_relais['error']) : null),
+                'speedbox_selectedrelay'     => (isset(Context::getContext()->cookie->speedbox_selected_relais_id) ? Context::getContext()->cookie->speedbox_selected_relais_id : null),
+                'speedbox_relais_status'     => (Tools::getValue('speedboxrelais') ? Tools::getValue('speedboxrelais') : null),
+                'speedbox_relais_carrier_id' => (int) Configuration::get('SPEEDBOX_RELAIS_CARRIER'),
+                'selectedCity'               => $params['city'],
             ));
 
             if ((int) $params['id'] == Configuration::get('SPEEDBOX_RELAIS_CARRIER')) {
